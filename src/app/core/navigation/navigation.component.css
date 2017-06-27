@@ -1,0 +1,9 @@
+:host {
+    display: block;
+    height: 70px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.logo-image {
+    max-width: 80px;
+}
