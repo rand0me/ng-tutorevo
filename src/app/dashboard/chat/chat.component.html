@@ -4,8 +4,8 @@
     <h3>Hello, Anonymous. What is your name?</h3>
 
     <div class="flex items-start">
-      <div class="flex-auto">
-        <input type="text" name="userName" #userNameInput="ngModel" ngModel required minlength="4" class="col-11">
+      <div class="flex-auto flex flex-column">
+        <input type="text" name="userName" #userNameInput="ngModel" ngModel required minlength="4" class="flex-auto">
 
         <!-- Errors -->
         <div *ngIf="!userNameInput.valid && userNameInput.dirty" class="has-error">
@@ -23,19 +23,19 @@
 
 <!-- Chat -->
 <section class="col-8 px2 my2 mx-auto flex flex-column" *ngIf="userName">
-  <!-- Chat Message -->
-  <div class="flex-auto overflow-scroll">
-    <div *ngFor="let message of messages" class="flex items-start border-bottom">
+  <div class="flex-auto overflow-scroll" #messagesWindowRef>
+    <!-- Chat Message -->
+    <div *ngFor="let message of messages" class="flex items-start border-bottom py1">
       <h4 class="m0 mr1" *ngIf="message.name">{{message.name}}:</h4>
       <div class="flex-auto">{{message.text}}</div>
     </div>
+    <!-- Chat Message -->
   </div>
-  <!-- Chat Message -->
 
   <!-- Chat Form -->
-  <form novalidate (submit)="onMessageSubmit()">
-    <input type="text" name="userMessage" [(ngModel)]="userMessage">
-    <button type="submit">Send</button>
+  <form novalidate #messageForm="ngForm" (submit)="onMessageSubmit()" class="flex items-start py2 mb2">
+    <input type="text" name="userMessage" [(ngModel)]="userMessage" class="flex-auto" minlength="2">
+    <button type="submit" [disabled]="!messageForm.valid" class="col-2">Send</button>
   </form>
   <!-- Chat Form -->
 </section>
