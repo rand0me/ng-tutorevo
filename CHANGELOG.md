@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/rand0me/ng-tutorevo/compare/v0.2.0...v0.2.1) (2017-07-04)
+
+
+### Bug Fixes
+
+* **project:** Fix typo in package.json ([e43655b](https://github.com/rand0me/ng-tutorevo/commit/e43655b))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/rand0me/ng-tutorevo/compare/v0.1.0...v0.2.0) (2017-07-04)
 
