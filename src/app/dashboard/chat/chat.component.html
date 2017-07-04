@@ -1,5 +1,5 @@
 <!-- Name Form -->
-<section class="col-4 px2 my2 mx-auto" *ngIf="!userName">
+<section class="md-col-4 px2 my2 mx-auto" *ngIf="!userName">
   <form #userNameForm="ngForm" novalidate (submit)="onUserNameSubmit(userNameForm.value)">
     <h3>Hello, Anonymous. What is your name?</h3>
 
@@ -22,10 +22,10 @@
 <!-- Name Form -->
 
 <!-- Chat -->
-<section class="col-8 px2 my2 mx-auto flex flex-column" *ngIf="userName">
+<section class="md-col-8 px2 my2 mx-auto flex flex-column full-height" *ngIf="userName">
   <div class="flex-auto overflow-scroll" #messagesWindowRef>
     <!-- Chat Message -->
-    <div *ngFor="let message of messages" class="flex items-start border-bottom py1">
+    <div *ngFor="let message of messages" class="flex items-start border-bottom py1 word-wrap-break">
       <h4 class="m0 mr1" *ngIf="message.name">{{message.name}}:</h4>
       <div class="flex-auto">{{message.text}}</div>
     </div>
