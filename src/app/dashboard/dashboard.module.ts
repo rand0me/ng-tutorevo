@@ -1,15 +1,23 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
+import { FormsModule }    from '@angular/forms';
+
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+const socketIoConfig: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ChatComponent }          from './chat/chat.component';
+import { ChatService }            from './shared/chat.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    FormsModule,
+    DashboardRoutingModule,
+    SocketIoModule.forRoot(socketIoConfig)
   ],
   declarations: [ChatComponent],
-  exports: [ChatComponent]
+  exports: [ChatComponent],
+  providers: [ChatService]
 })
 export class DashboardModule { }
