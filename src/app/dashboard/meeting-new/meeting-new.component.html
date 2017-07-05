@@ -1,0 +1,28 @@
+<section class="lg-col-4 px2 my2 mx-auto flex flex-column">
+
+  <!-- New Meeting Form -->
+  <form novalidate #form="ngForm" (submit)="onSubmit()" class="py2 mb2">
+
+    <div class="flex my1">
+      <label for="name" class="col-2">Title</label>
+      <input type="text" name="name" id="name" [(ngModel)]="meeting.title" class="flex-auto" required>
+    </div>
+
+    <div class="flex my1">
+      <label for="name" class="col-2">Speaker</label>
+      <input type="text" name="speaker" [(ngModel)]="meeting.speaker" class="flex-auto" required>
+    </div>
+
+    <div class="flex my1">
+      <label for="name" class="col-2">Date</label>
+      <input type="date" name="date" [ngModel]="meeting.date | date:'yyyy-MM-dd'"
+             (ngModelChange)="meeting.date = $event" class="flex-auto">
+    </div>
+
+    <div class="flex my1">
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+    </div>
+  </form>
+  <!-- New Meeting Form -->
+
+</section>

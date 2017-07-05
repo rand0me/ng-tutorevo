@@ -2,14 +2,19 @@ import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 
-import { environment } from "../../environments/environment";
+import { environment }    from "../../environments/environment";
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
-const socketIoConfig: SocketIoConfig = { url: environment.socketUrl, options: {} };
+const socketIoConfig: SocketIoConfig = {url: environment.socketUrl, options: {}};
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ChatComponent }          from './chat/chat.component';
-import { ChatService }            from './shared/chat.service';
+import { MeetingListComponent }   from './meeting-list/meeting-list.component';
+import { MeetingNewComponent }    from './meeting-new/meeting-new.component';
+
+import { ChatService }                from './shared/chat.service';
+import { MeetingService }             from "./shared/meeting.service";
+import { MeetingStatusBarComponent }  from "./meeting-status-bar/meeting-status-bar.component";
 
 @NgModule({
   imports: [
@@ -18,8 +23,14 @@ import { ChatService }            from './shared/chat.service';
     DashboardRoutingModule,
     SocketIoModule.forRoot(socketIoConfig)
   ],
-  declarations: [ChatComponent],
+  declarations: [
+    ChatComponent,
+    MeetingListComponent,
+    MeetingNewComponent,
+    MeetingStatusBarComponent
+  ],
   exports: [ChatComponent],
-  providers: [ChatService]
+  providers: [ChatService, MeetingService]
 })
-export class DashboardModule { }
+export class DashboardModule {
+}
