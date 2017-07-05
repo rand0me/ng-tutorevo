@@ -6,6 +6,16 @@ All notable changes to this project will be documented in this file. See [standa
 ## [0.0.3](https://github.com/rand0me/ng-tutorevo/compare/v0.0.2...v0.0.3) (2017-07-05)
 
 
+### Bug Fixes
+
+* **Project:** Новый модуль ([ed46891](https://github.com/rand0me/ng-tutorevo/commit/ed46891))
+
+
+
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/rand0me/ng-tutorevo/compare/v0.0.2...v0.0.3) (2017-07-05)
+
+
 
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/rand0me/ng-tutorevo/compare/v0.0.1...v0.0.2) (2017-07-05)
