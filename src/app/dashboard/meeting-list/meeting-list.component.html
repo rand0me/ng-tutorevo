@@ -1,0 +1,22 @@
+<div class="md-col-8 mx-auto">
+  <div class="flex items-center my2">
+    <h3 class="flex-auto">List of meetings</h3>
+    <button routerLink="/meeting/new">Create new meeting</button>
+  </div>
+
+  <div class="flex border-bottom py1">
+    <div class="col-3">Title</div>
+    <div class="col-3">Speaker</div>
+    <div class="col-3">Date</div>
+    <div class="col-3">Active</div>
+  </div>
+
+  <div *ngFor="let meeting of meetings" class="flex border-bottom py1">
+    <div class="col-3">{{meeting.title}}</div>
+    <div class="col-3">{{meeting.speaker}}</div>
+    <div class="col-3">{{meeting.date | date:'yyyy-MM-dd'}}</div>
+    <div class="col-3">
+      <app-meeting-status-bar [meeting]="meeting"></app-meeting-status-bar>
+    </div>
+  </div>
+</div>
