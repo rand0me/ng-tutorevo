@@ -11,7 +11,10 @@ import { MeetingsResolve }      from "./shared/meetings-resolve.service";
     RouterModule.forChild([
         {
           path: 'meetings',
-          component: MeetingListComponent
+          component: MeetingListComponent,
+          resolve: {
+            meetings: MeetingsResolve
+          }
         },
         {
           path: 'meeting/new',

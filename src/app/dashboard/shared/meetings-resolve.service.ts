@@ -13,6 +13,7 @@ export class MeetingsResolve implements Resolve<any> {
   }
 
   resolve(route: ActivatedRouteSnapshot): Observable<Meeting[]> {
-    return this.meetingService.onMeetings();
+    return this.meetingService.onMeetings()
+      .take(1);
   }
 }

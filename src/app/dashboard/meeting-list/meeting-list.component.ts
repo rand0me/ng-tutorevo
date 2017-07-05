@@ -1,7 +1,6 @@
 import { Component, OnInit }  from '@angular/core';
 import { ActivatedRoute }     from "@angular/router";
 
-import { MeetingService }     from "../shared/meeting.service";
 import { Meeting }            from "../shared/meeting.model";
 
 @Component({
@@ -12,11 +11,13 @@ import { Meeting }            from "../shared/meeting.model";
 export class MeetingListComponent implements OnInit {
   meetings: Meeting[] = [];
 
-  constructor(private meetingService: MeetingService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
-    this.meetingService.onMeetings()
-        .subscribe(meetings => this.meetings.push(...meetings));
+    this.route.data.forEach((data: { meetings: Meeting[] }) => {
+      this.meetings.push(...data.meetings);
+    });
   }
 
 }
